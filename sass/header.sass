@@ -1,0 +1,278 @@
+@import "bourbon"
+@import "vars.sass"
+
+body
+	font-size: 16px
+	min-width: 992px
+	position: relative
+	line-height: 1.3
+	font-family: "RobotoRegular", sans-serif
+	overflow-x: hidden
+	background-color: $main-color
+	color: #73708f
+
+
+.hidden
+	display: none
+
+.section
+	text-align: center
+
+h1, h2, h3
+	color: #e8e7f9
+
+h2
+	font-weight: normal
+	font-size: 45px
+	line-height: 1
+
+p
+	font-size: 27px
+
+a
+	outline: none !important
+
+.preloader
+	z-index: 200
+	position: fixed
+	width: 100%
+	height: 100%
+	&-left, &-right
+		position: absolute
+		background-color: $main-color
+		width: 50%
+		height: 100%
+		top: 0
+		transition: .4s
+	&-left
+		left: 0
+	&-right
+		right: 0
+
+.loaded
+	.preloader
+		&-left
+			transform: translate(-100%)
+		&-right
+			transform: translate(100%)
+	.round1
+		display: none
+
+.round1, .round1::before, .round1::after, .round2, .round2::after, .round2::before
+	border: 5px solid transparent
+	border-radius: 50%
+	z-index: 1000
+
+.round1
+	width: 250px
+	height: 250px
+	position: absolute
+	top: 50%
+	left: 50%
+	margin: -150px 0 0 -150px
+	border-top-color: #06bbd6
+	border-right-color: #06bbd6
+	animation: spin 1s linear infinite
+
+.round1::after, .round1::before, .round2::after, .round2::before
+	content: ''
+	position: absolute
+
+.round2 
+	position: absolute
+
+.round1::before 
+	top: 10px
+	left: 10px
+	bottom: 10px
+	right: 10px
+	border-top-color: #fbd100
+	animation: spin 2s linear infinite
+
+.round1::after 
+	top: 25px
+	left: 25px
+	right: 25px
+	bottom: 25px
+	border-top-color: #e52481
+	animation: spin 3s linear infinite
+
+.round2 
+	top: 40px
+	left: 40px
+	bottom: 40px
+	right: 40px
+	border-top-color: #924ec5
+	border-right-color: #924ec5
+	animation: spin 4s linear infinite
+
+.round2::before 
+	top: 15px
+	left: 15px
+	bottom: 15px
+	right: 15px
+	border-top-color: #f16003
+	animation: spin 5s linear infinite
+
+.round2::after 
+	top: 30px
+	left: 30px
+	bottom: 30px
+	right: 30px
+	border-top-color: #7cbf17
+	border-right-color: #7cbf17
+	animation: spin 6s linear infinite
+
+
+@keyframes spin
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+
+
+
+
+.menu
+	position: fixed
+	bottom: 10px
+	right: 10px
+	color: #fff
+	z-index: 100
+	ul, li
+		margin: 0
+		padding: 0
+		list-style: none
+	ul
+		background-color: $main-color
+		padding: 7px
+		border-radius: 5px
+		border: 1px solid #726e94
+	li
+		text-align: center
+		margin-bottom: 5px
+		a
+			border-radius: 5px
+			width: 50px
+			height: 50px
+			line-height: 46px
+			margin: auto
+			box-sizing: border-box
+			display: inline-block
+			color: #fff
+			opacity: .6
+			transition: all .4s ease
+			font-size: 20px
+			border: 4px solid transparent
+			&:hover, &:focus
+				text-decoration: none
+				opacity: 1
+		&:first-child
+			a
+				border-color: $blue-color
+				color: $blue-color
+		&:nth-child(2)
+			a
+				border-color: $yellow-color
+				color: $yellow-color
+		&:nth-child(3)
+			a
+				border-color: $pink-color
+				color: $pink-color
+		&:nth-child(4)
+			a
+				border-color: $fiol-color
+				color: $fiol-color
+		&:nth-child(5)
+			a
+				border-color: $orange-color
+				color: $orange-color
+		&:nth-child(6)
+			a
+				border-color: $dark-blue-color
+				color: $dark-blue-color
+		&:nth-child(7)
+			a
+				border-color: $green-color
+				color: $green-color
+
+
+
+
+.line
+	width: 100%
+	height: 5px
+	top: 50px
+	position: absolute
+	&-oval
+		color: $main-color
+		width: 63px;
+		height: 63px;
+		border-radius: 50%
+		transform: translateY(-50%)
+		font-family: 'Allura'
+		line-height: 70px
+		text-align: center
+		position: absolute
+		// border: 5px solid transparent
+		left: 50%
+		font-size: 50px
+		font-weight: bold
+		// background-color: $main-color
+	&-blue
+		background-color: $blue-color
+		transform: rotate(3deg)
+		.line-oval
+			// color: $blue-color
+			// border-color: $blue-color
+			background-color: $blue-color
+	&-yellow
+		background-color: $yellow-color
+		transform: rotate(-8deg)
+		.line-oval
+			background-color: $yellow-color
+			left: 35%
+	&-pink
+		background-color: $pink-color
+		transform: rotate(5deg)
+		.line-oval
+			background-color: $pink-color
+			left: 60%
+	&-fiol
+		background-color: $fiol-color
+		transform: rotate(-6deg)
+		.line-oval
+			background-color: $fiol-color
+			left: 40%
+	&-orange
+		background-color: $orange-color
+		transform: rotate(8deg)
+		.line-oval
+			background-color: $orange-color
+			left: 60%
+	&-dark-blue
+		background-color: $dark-blue-color
+		transform: rotate(-3deg)
+		.line-oval
+			background-color: $dark-blue-color
+			left: 45%
+	&-green
+		background-color: $green-color
+		transform: rotate(10deg)
+		.line-oval
+			background-color: $green-color
+			left: 65%
+
+
+.description
+	&-left
+		text-align: left
+		padding-left: 100px
+	&-right
+		text-align: right
+		padding-right: 100px
+
+
+#section0
+	background: url("../img/bg.png") top center
